@@ -24,7 +24,7 @@ const ResponsiveGrid = styled.div`
   grid-gap: 1em;
   align-items: center;
 
-  grid-template-columns: 20px 3.5fr repeat(3, 1fr);
+  grid-template-columns: 20px 3.5fr repeat(4, 1fr);
 
   @media screen and (max-width: 900px) {
     grid-template-columns: 20px 1.5fr repeat(2, 1fr);
@@ -78,6 +78,9 @@ const DataRow = ({ poolData, index }: { poolData: PoolData; index: number }) => 
               {feeTierPercent(poolData.feeTier)}
             </GreyBadge>
           </RowFixed>
+        </Label>
+        <Label end={1} fontWeight={400}>
+          {formatDollarAmount(poolData.volumeUSD * (poolData.feeTier / 1000000))}
         </Label>
         <Label end={1} fontWeight={400}>
           {formatDollarAmount(poolData.tvlUSD)}
@@ -158,6 +161,9 @@ export default function PoolTable({ poolDatas, maxItems = MAX_ITEMS }: { poolDat
             <Label color={theme.text2}>#</Label>
             <ClickableText color={theme.text2} onClick={() => handleSort(SORT_FIELD.feeTier)}>
               Pool {arrow(SORT_FIELD.feeTier)}
+            </ClickableText>
+            <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.tvlUSD)}>
+              24H Fees
             </ClickableText>
             <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.tvlUSD)}>
               TVL {arrow(SORT_FIELD.tvlUSD)}

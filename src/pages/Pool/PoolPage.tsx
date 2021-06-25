@@ -241,6 +241,13 @@ export default function PoolPage({
                     {formatDollarAmount(poolData.volumeUSD * (poolData.feeTier / 1000000))}
                   </TYPE.label>
                 </AutoColumn>
+
+                <AutoColumn gap="4px">
+                  <TYPE.main fontWeight={400}>1h Fees</TYPE.main>
+                  <TYPE.label fontSize="24px">
+                    {formatDollarAmount(poolData.volumeUSD1h * (poolData.feeTier / 1000000))}
+                  </TYPE.label>
+                </AutoColumn>
               </AutoColumn>
             </DarkGreyCard>
             <DarkGreyCard>

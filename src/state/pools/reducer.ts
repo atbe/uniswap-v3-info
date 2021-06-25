@@ -38,6 +38,7 @@ export interface PoolData {
   tick: number
 
   // volume
+  volumeUSD1h: number
   volumeUSD: number
   volumeUSDChange: number
   volumeUSDWeek: number

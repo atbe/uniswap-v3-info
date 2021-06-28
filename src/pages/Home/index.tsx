@@ -188,19 +188,10 @@ export default function Home() {
           </DarkGreyCard>
         </HideSmall>
         <RowBetween>
-          <TYPE.main>Top Tokens</TYPE.main>
-          <StyledInternalLink to="/tokens">Explore</StyledInternalLink>
-        </RowBetween>
-        <TokenTable tokenDatas={formattedTokens} />
-        <RowBetween>
           <TYPE.main>Top Pools</TYPE.main>
           <StyledInternalLink to="/pools">Explore</StyledInternalLink>
         </RowBetween>
         <PoolTable poolDatas={poolDatas} />
-        <RowBetween>
-          <TYPE.main>Transactions</TYPE.main>
-        </RowBetween>
-        {transactions ? <TransactionsTable transactions={transactions} /> : null}
       </AutoColumn>
     </PageWrapper>
   )

@@ -97,7 +97,7 @@ const DataRow = ({ poolData, index }: { poolData: PoolData; index: number }) => 
   )
 }
 
-const MAX_ITEMS = 10
+const MAX_ITEMS = 20
 
 export default function PoolTable({ poolDatas, maxItems = MAX_ITEMS }: { poolDatas: PoolData[]; maxItems?: number }) {
   // theming
@@ -164,7 +164,7 @@ export default function PoolTable({ poolDatas, maxItems = MAX_ITEMS }: { poolDat
               Pool {arrow(SORT_FIELD.feeTier)}
             </ClickableText>
             <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.fees24H)}>
-              24H Fees
+              24H Fees {arrow(SORT_FIELD.fees24H)}
             </ClickableText>
             <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.tvlUSD)}>
               TVL {arrow(SORT_FIELD.tvlUSD)}

@@ -61,6 +61,7 @@ const SORT_FIELD = {
   volumeUSD: 'volumeUSD',
   tvlUSD: 'tvlUSD',
   volumeUSDWeek: 'volumeUSDWeek',
+  fees24H: 'fees24H',
 }
 
 const DataRow = ({ poolData, index }: { poolData: PoolData; index: number }) => {
@@ -80,7 +81,7 @@ const DataRow = ({ poolData, index }: { poolData: PoolData; index: number }) => 
           </RowFixed>
         </Label>
         <Label end={1} fontWeight={400}>
-          {formatDollarAmount(poolData.volumeUSD * (poolData.feeTier / 1000000))}
+          {formatDollarAmount(poolData.fees24H)}
         </Label>
         <Label end={1} fontWeight={400}>
           {formatDollarAmount(poolData.tvlUSD)}
@@ -162,7 +163,7 @@ export default function PoolTable({ poolDatas, maxItems = MAX_ITEMS }: { poolDat
             <ClickableText color={theme.text2} onClick={() => handleSort(SORT_FIELD.feeTier)}>
               Pool {arrow(SORT_FIELD.feeTier)}
             </ClickableText>
-            <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.tvlUSD)}>
+            <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.fees24H)}>
               24H Fees
             </ClickableText>
             <ClickableText color={theme.text2} end={1} onClick={() => handleSort(SORT_FIELD.tvlUSD)}>

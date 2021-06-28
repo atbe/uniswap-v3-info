@@ -105,62 +105,6 @@ export default function Home() {
       <ThemedBackgroundGlobal backgroundColor={'#fc077d'} />
       <AutoColumn gap="16px">
         <TYPE.main>Uniswap Overview</TYPE.main>
-        <ResponsiveRow>
-          <ChartWrapper>
-            <LineChart
-              data={formattedTvlData}
-              height={220}
-              minHeight={332}
-              color={theme.pink1}
-              value={liquidityHover}
-              label={leftLabel}
-              setValue={setLiquidityHover}
-              setLabel={setLeftLabel}
-              topLeft={
-                <AutoColumn gap="4px">
-                  <TYPE.mediumHeader fontSize="16px">TVL</TYPE.mediumHeader>
-                  <TYPE.largeHeader fontSize="32px">
-                    <MonoSpace>{formatDollarAmount(liquidityHover, 2, true)} </MonoSpace>
-                  </TYPE.largeHeader>
-                  <TYPE.main fontSize="12px" height="14px">
-                    {leftLabel ? (
-                      <MonoSpace>{leftLabel}</MonoSpace>
-                    ) : (
-                      <MonoSpace>{dayjs.utc().format('MMM D, YYYY')}</MonoSpace>
-                    )}
-                  </TYPE.main>
-                </AutoColumn>
-              }
-            />
-          </ChartWrapper>
-          <ChartWrapper>
-            <BarChart
-              height={220}
-              minHeight={332}
-              data={formattedVolumeData}
-              color={theme.blue1}
-              setValue={setVolumeHover}
-              setLabel={setRightLabel}
-              value={volumeHover}
-              label={rightLabel}
-              topLeft={
-                <AutoColumn gap="4px">
-                  <TYPE.mediumHeader fontSize="16px">Volume 24H</TYPE.mediumHeader>
-                  <TYPE.largeHeader fontSize="32px">
-                    <MonoSpace> {formatDollarAmount(volumeHover, 2)}</MonoSpace>
-                  </TYPE.largeHeader>
-                  <TYPE.main fontSize="12px" height="14px">
-                    {rightLabel ? (
-                      <MonoSpace>{rightLabel}</MonoSpace>
-                    ) : (
-                      <MonoSpace>{dayjs.utc().format('MMM D, YYYY')}</MonoSpace>
-                    )}
-                  </TYPE.main>
-                </AutoColumn>
-              }
-            />
-          </ChartWrapper>
-        </ResponsiveRow>
         <HideSmall>
           <DarkGreyCard>
             <RowBetween>

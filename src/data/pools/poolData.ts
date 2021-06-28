@@ -77,6 +77,8 @@ interface PoolFields {
   totalValueLockedToken0: string
   totalValueLockedToken1: string
   totalValueLockedUSD: string
+
+  fees24H: string
 }
 
 interface PoolDataResponse {
@@ -199,6 +201,8 @@ export function usePoolDatas(
 
     const feeTier = current ? parseInt(current.feeTier) : 0
 
+    const fees24H = volumeUSD * (feeTier / 1000000)
+
     if (current) {
       accum[address] = {
         address,
@@ -230,6 +234,8 @@ export function usePoolDatas(
         tvlToken0,
         tvlToken1,
         volumeUSD1h,
+
+        fees24H,
       }
     }
 

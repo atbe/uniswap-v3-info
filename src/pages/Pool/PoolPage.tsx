@@ -237,16 +237,12 @@ export default function PoolPage({
                 </AutoColumn>
                 <AutoColumn gap="4px">
                   <TYPE.main fontWeight={400}>24h Fees</TYPE.main>
-                  <TYPE.label fontSize="24px">
-                    {formatDollarAmount(poolData.volumeUSD * (poolData.feeTier / 1000000))}
-                  </TYPE.label>
+                  <TYPE.label fontSize="24px">{formatDollarAmount(poolData.volumeUSD)}</TYPE.label>
                 </AutoColumn>
 
                 <AutoColumn gap="4px">
                   <TYPE.main fontWeight={400}>1h Fees</TYPE.main>
-                  <TYPE.label fontSize="24px">
-                    {formatDollarAmount(poolData.volumeUSD1h * (poolData.feeTier / 1000000))}
-                  </TYPE.label>
+                  <TYPE.label fontSize="24px">{formatDollarAmount(poolData.volumeUSD1h)}</TYPE.label>
                 </AutoColumn>
               </AutoColumn>
             </DarkGreyCard>

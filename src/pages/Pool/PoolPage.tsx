@@ -114,6 +114,8 @@ export default function PoolPage({
   //watchlist
   const [savedPools, addSavedPool] = useSavedPools()
 
+  console.log('pool data =', poolData)
+
   return (
     <PageWrapper>
       <ThemedBackground backgroundColor={backgroundColor} />
@@ -237,7 +239,7 @@ export default function PoolPage({
                 </AutoColumn>
                 <AutoColumn gap="4px">
                   <TYPE.main fontWeight={400}>24h Fees</TYPE.main>
-                  <TYPE.label fontSize="24px">{formatDollarAmount(poolData.volumeUSD)}</TYPE.label>
+                  <TYPE.label fontSize="24px">{formatDollarAmount(poolData.fees24H)}</TYPE.label>
                 </AutoColumn>
 
                 <AutoColumn gap="4px">
